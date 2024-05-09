@@ -2,15 +2,9 @@
 
 Speech to text to local LLM to shell cmd.
 
+Records audio in console allowing user to vocally describe a desired shell command / operation.
 
-
-```
-chmod +x s2cmd.sh
-./s2cmd.sh
-```
-
-
-Records audio in console allowing user to vocally describe a desired shell command / operation... 
+This is converted to an LLM prompt which is run on a local LLM (like gpt-2 or llama), and converted to (ideally) a desired linux command.
 
 
 E.g.
@@ -19,21 +13,41 @@ E.g.
 
 
 
-The audio is converted to text which is then converted to a best guess shell command using a local LLM (like gpt-2 or llama).
-
 (This actually works a lot better than expected! but obvs I suggest reviewing any command before running..)
 
 
+Setup:
 
-Speech to text step:
+```
+# If using youre gcloud to get audio transcribed
+gcloud auth application-default login
 
-Uses sox and ffmpeg to create / clean a wav recording.
+brew install ffmpeg
+brew install sox
+chmod +x s2cmd.sh
 
-Currently calls Google cloud API to get transcript from audio (account creds + project required).
+# update GCLOUD_PROJ_NAME, MODEL and BIN vars in sh before running
+
+./s2cmd.sh
+```
 
 
 
-Alternatively, to skip speech to text step and have the sh accept the prompt text:
+
+
+
+
+**Speech to text step**
+
+This currently relies on google clouds transcription service for which you need a project + API etc.
+
+Also uses sox and ffmpeg to create / clean a wav recording.
+
+
+
+
+
+Alternatively, skip speech to text step and just have the sh accept the prompt text :) 
 
 ```
 prompt=""
