@@ -6,14 +6,14 @@ Records audio in console allowing user to vocally describe a desired shell comma
 
 This is converted to an LLM prompt which is run on a local LLM (like gpt-2 or llama), and converted to (ideally) a desired linux command.
 
+Warning: This takes a while to run on your average machine and some of the suggested commands are a bit awful but I'm convinced with the right model this could be awesome :)
+At the moment it may be better to use a super decent online model via it's API :)
+
 
 E.g.
 "Computer, show me the files in the current directory"
 "find me a list of files called blah that contain blahblah and sort them by blahblahblah..."
 
-
-
-(This actually works a lot better than expected! but obvs I suggest reviewing any command before running..)
 
 
 Setup:
