@@ -1,7 +1,17 @@
-# speech2text2llm2cmd_sh
+# speech_to_txt_to_LLM_to_cmd_sh
+
 Speech to text to local LLM to shell cmd.
 
+
+
+```
+chmod +x s2cmd.sh
+./s2cmd.sh
+```
+
+
 Records audio in console allowing user to vocally describe a desired shell command / operation... 
+
 
 E.g.
 "Computer, show me the files in the current directory"
@@ -9,7 +19,7 @@ E.g.
 
 
 
-The audio description is converted to text which is then converted to a best guess shell command using a local LLM (like gpt-2 or llama).
+The audio is converted to text which is then converted to a best guess shell command using a local LLM (like gpt-2 or llama).
 
 (This actually works a lot better than expected! but obvs I suggest reviewing any command before running..)
 
@@ -37,10 +47,4 @@ done
 
 
 
-End recording with Ctrl + C
 
-
-```
-chmod +x s2cmd.sh
-./s2cmd.sh
-```
